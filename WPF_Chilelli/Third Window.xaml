@@ -1,0 +1,77 @@
+﻿<Window x:Class="WPF_Chilelli.Third_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Chilelli"
+        mc:Ignorable="d"
+        Title="Third_Window" Height="450" Width="800">
+    <Canvas Name="tehCanvas">
+        <TextBlock Name="hello" Text="Hello" FontSize="100" FontFamily="Impact" Canvas.Left="-228" Canvas.Top="95" Height="120" Width="345">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Name="helloIn">
+                            <DoubleAnimation
+                                Storyboard.TargetName="hello"
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                From="-228" To="35" Duration="0:0:3"
+                                AutoReverse="False">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <TextBlock Name="WPF" Text="WPF" FontSize="100" FontFamily="Impact" Canvas.Left="267" Canvas.Top="-143" Height="120" Width="345">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Name="WPFin">
+                            <DoubleAnimation
+                                Storyboard.TargetName="WPF"
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                From="-142" To="95" Duration="0:0:3"
+                                AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <TextBlock Name="world" Text="World" FontSize="100" FontFamily="Impact" Canvas.Left="825" Canvas.Top="95" Height="120" Width="345">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Name="worldIN">
+                            <DoubleAnimation
+                                Storyboard.TargetName="world"
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                From="825" To="455" Duration="0:0:3"
+                                AutoReverse="False">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <TextBlock Name="exclaim" Text="!" FontSize="100" FontFamily="Impact" Canvas.Left="725" Canvas.Top="-143" Height="120" Width="32">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Name="exclaimIN">
+                            <DoubleAnimation
+                                Storyboard.TargetName="exclaim"
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                BeginTime="0:0:5"
+                                From="-143" To="95" Duration="0:0:3"
+                                AutoReverse="False">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <Button x:Name="button" Content="Page 2" Height="47" Width="79" Click="button_ClickBackToTwo" Canvas.Left="38" Canvas.Top="297"/>
+        <Button x:Name="END" Content="END" Canvas.Left="634" Canvas.Top="299" Height="43" Width="73" Click="END_Click"/>
+    </Canvas>
+</Window>
